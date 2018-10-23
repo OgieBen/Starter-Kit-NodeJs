@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Styles-->
+    <link rel="stylesheet" href="../stylesheets/commons.css" />
+    <link rel="stylesheet" href="../stylesheets/header.css" />
+    <link rel="stylesheet" href="../stylesheets/commons.css" />
+    <link rel="styl esheet" href="../stylesheets/footer.css" />
+    <link rel="stylesheet" href="../stylesheets/index.css" />
+
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!--Header Begins Here-->
+        <div class="header container ">
+            <div class="header-content align-content-center col container">
+                <div class="container col-4 ">
+                    <a class=" hide center-box-vertical"><img src="../images/icons/outline-menu-white-18/2x/outline_menu_white_18dp.png" /></a>
+                </div>
+
+                <div class="brand container col-4 align-content-center">
+                    <a class="center-box-vertical" href="index.html">S<sub>O</sub>D</a>
+                </div>
+
+                <div class="nav-bar container col-4 align-content-center">
+                    <nav class="center-box-vertical ">
+                        <!--                        <a class=" pd-10">Questions</a>-->
+                        <!--                        <a class="  pd-10">Profile</a>-->
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!--Header Ends Here-->
+
+        <!--Main content start here-->
+        <div class="container align-content-center main-content pd-xs-t-50 flex-wrap ">
+
+            <!--Sign in panel-->
+            <div class="container panel center-box-vertical br-regular col-xs-11 col-sm-11 col-md-6 col-lg-6 col-xl-4 shadow-dim   mg-l-10 mg-r-10 mg-xs-b-10 mg-sm-b-10 mg-md-b-10 mg-lg-b-10  flex-wrap ">
+                <div class="mg-10 panel-top-text container col-12">
+                    <p class="lead">
+                        Sign In
+                    </p>
+                </div>
+
+                <div class=" mg-10 container col-12 cred-input flex-wrap">
+                    <input id="email-input" name="email" class="col-12" type="email" placeholder="Email" />
+
+                    <input id="password-input" name="password" class="col-12 mg-t-10" type="password" placeholder="Password" />
+                </div>
+
+                <div class=" mg-10 col-12">
+
+                    <Button id="login-button" class="btn-lg float-right">Sign In</Button>
+
+                </div>
+
+            </div>
+
+            <!--Sign up panel-->
+            <div class="container panel center-box-vertical br-regular col-xs-11 col-sm-11 col-md-6 col-lg-6 col-xl-4 shadow-dim  flex-wrap">
+
+                <div class="mg-10 panel-top-text container col-12">
+                    <p class="lead">
+                        Create an account
+                    </p>
+                </div>
+
+                <div class=" mg-10 container col-12 cred-input flex-wrap">
+                    <input id="sign-up-name" name="name" class="col-12 " type="text" placeholder="Name" />
+
+                    <input id="sign-up-email" name="email" class="col-12 mg-t-10" type="email" placeholder="Email" />
+
+                    <input id="sign-up-password" name="password" class="col-12 mg-t-10" type="password" placeholder="Password" />
+                </div>
+
+                <div class=" mg-10 col-12">
+
+                    <Button id="sign-up-button" class="btn-lg float-right">Sign Up</Button>
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+        <!--Main content ends here-->
+
+    </div>
+
+
+    <script src="../javascripts/api.js">
+    </script>
+
+    <script src="../javascripts/components.js">
+    </script>
+
+    <script>
+        let emailInput = document.getElementById('email-input');
+        let signUpNameInput = document.getElementById('sign-up-name');
+        let signUpEmailInput = document.getElementById('sign-up-email');
+        let signUpPasswordInput = document.getElementById('sign-up-password');
+        let passwordInput = document.getElementById('password-input');
+        let loginButton = document.getElementById('login-button');
+        let signUpButton = document.getElementById('sign-up-button');
+
+
+
+        click(loginButton, () => {
+
+            let email = emailInput.value;
+            let password = passwordInput.value;
+
+            const data = {
+                email,
+                password
+            };
+
+            login(data, (response) => {
+                if (response === 0) {
+                    alert('Login Error');
+                    return;
+                }
+
+                alert(response.data.msg);
+                if (typeof response.data.userId !== 'undefined') {
+                    window.location.href = `/u/${response.data.userId}`;
+                }
+
+            });
+        });
+
+        click(signUpButton, () => {
+            let name = signUpNameInput.value;
+            let email = signUpEmailInput.value;
+            let password = signUpPasswordInput.value;
+
+            let data = {
+                name,
+                email,
+                password,
+            }
+            
+            signUp(data, (response) => {
+                 if (response === 0) {
+                    alert('Sign up Error');
+                    return;
+                }
+
+                alert(response.data.msg);
+                if (typeof response.data.userId !== 'undefined') {
+                    window.location.href = `/u/${response.data.userId}`;
+                }
+            });
+            
+        });
+
+    </script>
+
+
+</body>
+
+</html>

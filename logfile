@@ -1,0 +1,9 @@
+2018-10-08 13:11:28.830 WAT [36887] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2018-10-08 13:11:28.830 WAT [36887] LOG:  listening on IPv6 address "::1", port 5432
+2018-10-08 13:11:28.831 WAT [36887] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2018-10-08 13:11:28.856 WAT [36888] LOG:  database system was interrupted; last known up at 2018-09-10 20:52:07 WAT
+2018-10-08 13:11:28.986 WAT [36888] LOG:  database system was not properly shut down; automatic recovery in progress
+2018-10-08 13:11:28.992 WAT [36888] LOG:  redo starts at 0/1EAA118
+2018-10-08 13:11:28.992 WAT [36888] LOG:  invalid record length at 0/1EAA1F8: wanted 24, got 0
+2018-10-08 13:11:28.992 WAT [36888] LOG:  redo done at 0/1EAA1C0
+2018-10-08 13:11:29.006 WAT [36887] LOG:  database system is ready to accept connections

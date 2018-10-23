@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <button> Click Here</button>
+    <input id="temp-input" />
+
+
+    <form action="/api/v1/questions" method="POST">
+        <label for="">Add a question</label>
+        <input placeholder="user id" name="userId" type="text">
+        <input placeholder="question" name="question" type="text">
+        <input type="submit" value="submit question">
+    </form>
+
+
+    <br>
+
+    <h1>Testing Add Answer</h1>
+    <!-- <form action="/api/v1/questions/1/answers" method="POST">
+        <label for="">Add Answer</label>
+        <input placeholder="user Id" name="userId" type="text">
+        <input placeholder="answer" name="answer" type="text">
+        <input placeholder="question Id" name="questionId" type="text">
+        <input type="submit" value="submit answer">
+    </form> -->
+
+
+    <br>
+
+    <h1>Testing Signup</h1>
+
+    <!-- <form action="/api/v1/auth/signup" method="POST">
+        <label for="">Sign Up</label>
+        <input placeholder="name" name="name" type="text">
+        <input placeholder="Email" name="email" type="text">
+        <input placeholder="Password" name="password" type="text">
+        <input type="submit" value="submit answer">
+    </form> -->
+
+
+    <br>
+    <h1>Testing Put</h1>
+    <button id="put" type="submit"> Test Put</button>
+    <input placeholder="Update entry" type="text" id="answer-content">
+
+
+    <br><h1>For Testing Delete/Update</h1>
+    <button id="delete" type="submit"> Test delete</button>
+    <input id="delete-question" type="text" name="" id="">
+
+
+    <br><h1>Upvote</h1>
+    <button id="upvote-button" type="submit"> Upvote</button>
+    <input placeholder="Answer Id" id="upvote-input-aId" type="text" name="" id="">
+    <input placeholder="Question id" id="upvote-input-qId" type="text">
+
+
+    <br><h1>Downvote</h1>
+    <button id="downvote-button" type="submit"> Downvote</button>
+    <input placeholder="Answer Id" id="downvote-input-aId" type="text" name="" id="">
+    <input placeholder="Question id" id="downvote-input-qId" type="text">
+
+
+    <br><br>
+    <br><h1>Testing Add Comment</h1>
+    <button id="add-comment-button" type="submit"> Add Comment</button>
+    <input placeholder="Comment" id="add-comment-input" type="text" name="" id="">
+    <input placeholder="Question id" id="add-comment-qId" type="text">
+    <input placeholder="Answer Id" id="add-comment-input-aId" type="text">
+
+    <br><br>
+    <br><h1>Search</h1>
+    <button id="search-button" type="submit"> search</button>
+    <input placeholder="Comment" id="search-input" type="text" name="" id="">
+
+   
+    <h1>Welcome to ExpressJs Starter Kit</h1>
+    
+
+    <script src="https://cdn.auth0.com/js/auth0/9.5.1/auth0.min.js"></script>
+</body>
+
+</html>
